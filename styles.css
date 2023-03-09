@@ -11,17 +11,6 @@ body {
     color: white;
 }
 
-.outer-container {
-    display: flex;
-    flex-direction: row;
-    flex-basis: auto;
-}
-
-.inner-container {
-    margin: 20px;
-    justify-content: center;
-}
-
 .item {
     display: flex;
     justify-content: center;
@@ -32,10 +21,12 @@ body {
 }
 
 .grid-container {
+    padding: 20px;
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
     grid-gap: 16px;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto repeat(5, 50px);
     grid-template-areas:
         "a"
         "b"
@@ -70,11 +61,10 @@ body {
     grid-area: f;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 576px){
     .grid-container {
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
-        grid-template-rows: 50px 174px 100px auto 50px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 50px 190px 100px auto 50px;
         grid-gap: 16px;
         grid-template-areas:
         "a c c"
