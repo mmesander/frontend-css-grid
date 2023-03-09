@@ -1,1 +1,87 @@
 /*Maak hier jouw CSS!*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: pink;
+    color: white;
+}
+
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+}
+
+.inner-container {
+    margin: 20px;
+    justify-content: center;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5B052B;
+    color: white;
+    padding: 15px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    grid-gap: 16px;
+    grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "."
+        "f";
+}
+
+.item-a {
+    grid-area: a;
+}
+
+.item-b {
+    grid-area: b;
+}
+
+.item-c {
+    grid-area: c;
+}
+
+.item-d {
+    grid-area: d;
+}
+
+.item-e {
+    grid-area: e;
+}
+
+.item-f {
+    grid-area: f;
+}
+
+@media screen and (min-width: 768px){
+    .grid-container {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 50px 174px 100px auto 50px;
+        grid-gap: 16px;
+        grid-template-areas:
+        "a c c"
+        "b c c"
+        "b e d"
+        "b e ."
+        "f f f"
+    }
+
+}
